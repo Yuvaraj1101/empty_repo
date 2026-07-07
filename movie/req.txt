@@ -1,0 +1,71 @@
+Problem Statement
+Design a Movie Ticket Booking System using object-oriented programming principles.
+Implement the following classes:
+
+⸻
+
+Class 1:
+Movie
+Each movie should have the following attributes:
+movie_id (integer)
+title (string)
+ticket_price (float)
+available_seats (integer)
+Implement the following methods:
+book_seats(count)
+Books the requested number of seats if available.
+Reduces the number of available seats.
+Returns True if the booking is successful; otherwise returns False.
+cancel_seats(count)
+Adds the specified number of seats back to the available seats.
+display()
+Displays the movie details, including the number of available seats.
+
+⸻
+
+Class 2:
+Booking
+Each booking should have the following attributes:
+booking_id (integer)
+customer_name (string)
+movie (a Movie object)
+number_of_tickets (integer)
+Implement the following methods:
+confirm_booking()
+Attempts to book the requested number of tickets for the associated movie.
+Returns True if the booking is successful; otherwise returns False.
+cancel_booking()
+Cancels the booking and restores the booked seats to the movie.
+calculate_amount()
+Returns the total ticket cost for the booking.
+display()
+Displays the booking details.
+
+⸻
+
+Class 3:
+Theater
+The theater should maintain a collection of movies.
+Attributes:
+name (string)
+movies (list of Movie objects)
+Implement the following methods:
+add_movie(movie)
+find_movie(movie_id)
+display_movies()
+book_ticket(booking)
+Confirms the booking if seats are available.
+cancel_ticket(booking)
+Cancels an existing booking.
+
+⸻
+
+Main Program
+Write a program that:
+Creates a Theater object.
+Adds at least three movies to the theater.
+Displays the list of available movies.
+Creates at least two bookings for different customers.
+Attempts to book more seats than are available for one of the movies.
+Cancels one booking.
+Displays the final status of all movies, including the remaining available seats

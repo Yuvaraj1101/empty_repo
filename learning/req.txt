@@ -1,0 +1,58 @@
+# ---------- CONDA ----------
+
+conda --version
+conda info
+conda env list
+conda create -n ds_env python=3.12
+conda activate ds_env
+conda install pandas
+conda list
+conda search pandas
+conda remove pandas
+conda env export > environment.yml
+conda env create -f environment.yml
+conda remove --name ds_env --all
+conda deactivate
+
+# ---------- PYTHON / PIP ----------
+
+python --version
+where python
+pip --version
+pip install pandas
+pip uninstall pandas
+pip list
+pip show pandas
+pip freeze
+pip freeze > requirements.txt
+pip install -r requirements.txt
+python -m pip install --upgrade pip
+
+# ---------- PYTHON VENV ----------
+
+python -m venv myenv
+
+# PowerShell
+myenv\Scripts\Activate.ps1
+
+# Command Prompt (CMD)
+myenv\Scripts\activate.bat
+
+# Git Bash
+source myenv/Scripts/activate
+
+deactivate
+
+Difference between venv and Conda
+
+venv:
+- Creates an isolated Python environment.
+- Uses pip to install packages.
+- Uses the existing Python installation.
+- Best for Python development.
+
+Conda:
+- Creates an isolated environment.
+- Manages Python versions and packages.
+- Uses conda to install packages.
+- Best for Data Science, Machine Learning, and AI projects.

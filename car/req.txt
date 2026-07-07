@@ -1,0 +1,120 @@
+Problem Statement
+
+Design a Car Rental Management System using Object-Oriented Programming (OOP).
+
+Implement the following classes:
+
+------------------------------------------------------------
+
+Class 1:
+Car
+
+Each car should have the following attributes:
+
+- car_id (integer)
+- brand (string)
+- rental_price_per_day (float)
+- available_cars (integer)
+
+Implement the following methods:
+
+rent_car(count)
+- Rent the requested number of cars if available.
+- Reduce the available cars.
+- Return True if successful; otherwise return False.
+
+return_car(count)
+- Add the returned cars back to the available cars.
+
+display()
+- Display all car details.
+
+------------------------------------------------------------
+
+Class 2:
+Rental
+
+Each rental should have the following attributes:
+
+- rental_id (integer)
+- customer_name (string)
+- car (Car object)
+- cars_rented (integer)
+- rental_days (integer)
+
+Implement the following methods:
+
+confirm_rental()
+- Attempt to rent the requested number of cars.
+- Return True if successful; otherwise return False.
+
+cancel_rental()
+- Cancel the rental and return the rented cars.
+
+calculate_bill()
+- Return the total rental amount.
+- Formula:
+  cars_rented × rental_days × rental_price_per_day
+
+display()
+- Display all rental details.
+
+------------------------------------------------------------
+
+Class 3:
+RentalAgency
+
+The rental agency should maintain a collection of cars.
+
+Attributes:
+
+- agency_name (string)
+- cars (list of Car objects)
+
+Implement the following methods:
+
+add_car(car)
+- Add a Car object to the agency.
+
+find_car(car_id)
+- Return the Car object if found; otherwise return None.
+
+display_cars()
+- Display all available cars.
+
+rent_vehicle(rental)
+- Confirm the rental if enough cars are available.
+- Print:
+  "Rental Confirmed."
+- Otherwise print:
+  "Cars Not Available."
+
+cancel_rental(rental)
+- Cancel the rental and print:
+  "Rental Cancelled."
+
+------------------------------------------------------------
+
+Main Program
+
+Write a program that:
+
+1. Creates a RentalAgency object.
+
+2. Creates at least three Car objects.
+
+3. Adds all cars to the agency.
+
+4. Displays all available cars.
+
+5. Creates at least three Rental objects.
+
+6. Successfully rents cars for two customers.
+
+7. Attempts to rent more cars than available for one customer.
+
+8. Calculates and displays the bill for each rental.
+
+9. Cancels one rental.
+
+10. Displays the final availability of all cars.

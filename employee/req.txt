@@ -1,0 +1,94 @@
+Problem Statement: Employee Payroll Management System
+
+Create a Python program using Object-Oriented Programming (OOP) to manage employees and payroll records.
+
+Class 1: Employee
+
+Attributes:
+- employee_id
+- name
+- department
+- salary
+
+Methods:
+- increase_salary(amount): Increases the employee's salary by the given amount.
+- display(): Displays all employee details.
+
+------------------------------------------------------------
+
+Class 2: PayrollRecord
+
+Attributes:
+- payroll_id
+- employee (Employee object)
+- bonus
+- tax
+- is_paid (Default value should be False)
+
+Methods:
+- calculate_salary(): Calculates and returns the net salary.
+  Formula:
+  Net Salary = Salary + Bonus - Tax
+
+- pay_salary():
+  - If the salary has not been paid:
+      - Calculate the net salary.
+      - Mark is_paid as True.
+      - Return True.
+  - Otherwise, return False.
+
+- display(): Displays the payroll details.
+
+------------------------------------------------------------
+
+Class 3: Company
+
+Attributes:
+- company_name
+- employees (List of Employee objects)
+
+Methods:
+- add_employee(employee): Adds an employee to the company.
+- find_employee(employee_id): Returns the Employee object if found; otherwise returns None.
+- display_employees(): Displays all employee details.
+- process_salary(payroll_record):
+    - If payment is successful, print:
+      "Salary paid successfully."
+    - Otherwise, print:
+      "Salary has already been paid."
+
+------------------------------------------------------------
+
+Expected Functionality:
+
+1. Create multiple Employee objects.
+2. Add employees to the Company.
+3. Search for an employee using employee_id.
+4. Increase an employee's salary.
+5. Create PayrollRecord objects for employees.
+6. Process salary payments.
+7. Display employee details.
+8. Display payroll details.
+9. Prevent duplicate salary payments.
+
+------------------------------------------------------------
+
+Sample Output:
+
+Employee Details
+----------------
+Employee ID : 101
+Name        : Rahul
+Department  : IT
+Salary      : 50000
+
+Salary paid successfully.
+
+Payroll Details
+---------------
+Payroll ID   : P101
+Employee     : Rahul
+Bonus        : 5000
+Tax          : 3000
+Net Salary   : 52000
+Status       : Paid

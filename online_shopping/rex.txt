@@ -1,0 +1,188 @@
+Create a Python program using Object-Oriented Programming (OOP) to manage an online shopping system.
+
+------------------------------------------------------------
+
+Class 1: Product
+
+Attributes:
+- product_id
+- product_name
+- price
+- stock_quantity
+
+Methods:
+- reduce_stock(quantity):
+    - If enough stock is available:
+        - Reduce stock_quantity.
+        - Return True.
+    - Otherwise:
+        - Return False.
+
+- add_stock(quantity):
+    - Increase stock_quantity.
+
+- display():
+    - Display all product details.
+
+------------------------------------------------------------
+
+Class 2: Order
+
+Attributes:
+- order_id
+- customer_name
+- products (List of tuples -> Product object, quantity)
+- total_amount
+- is_confirmed (Default False)
+
+Methods:
+- add_product(product, quantity):
+    - Add a product and quantity to the order.
+
+- calculate_total():
+    - Calculate the total bill of all products.
+    - Return the total amount.
+
+- confirm_order():
+    - Check whether every product has enough stock.
+    - If all products are available:
+        - Reduce stock for each product.
+        - Calculate total.
+        - Set is_confirmed to True.
+        - Return True.
+    - Otherwise:
+        - Do not reduce any stock.
+        - Return False.
+
+- cancel_order():
+    - If order is confirmed:
+        - Return all quantities back to stock.
+        - Set is_confirmed to False.
+
+- display():
+    - Display:
+        - Order ID
+        - Customer Name
+        - Product List
+        - Quantities
+        - Total Amount
+        - Status
+
+------------------------------------------------------------
+
+Class 3: ShoppingCart
+
+Attributes:
+- customer_name
+- items (List of tuples -> Product object, quantity)
+
+Methods:
+- add_item(product, quantity)
+- remove_item(product_id)
+- display_cart()
+- clear_cart()
+
+------------------------------------------------------------
+
+Class 4: Store
+
+Attributes:
+- store_name
+- products (List of Product objects)
+- orders (List of Order objects)
+
+Methods:
+- add_product(product)
+- find_product(product_id)
+- display_products()
+
+- place_order(order):
+    - Confirm the order.
+    - If successful:
+        - Store the order.
+        - Print "Order Confirmed."
+    - Otherwise:
+        - Print "Insufficient Stock."
+
+- cancel_order(order):
+    - Cancel the order.
+    - Print "Order Cancelled."
+
+- total_revenue():
+    - Return the total revenue from all confirmed orders.
+
+------------------------------------------------------------
+
+Expected Functionality
+
+1. Create multiple Product objects.
+2. Add them to the Store.
+3. Search products using product_id.
+4. Create a Shopping Cart.
+5. Add multiple products to the cart.
+6. Create an Order using the cart.
+7. Calculate the total bill.
+8. Prevent ordering when stock is insufficient.
+9. Reduce stock after successful purchase.
+10. Cancel an order and restore stock.
+11. Display all products.
+12. Display all order details.
+13. Display total revenue earned by the store.
+
+------------------------------------------------------------
+
+Bonus Challenges
+
+1. Apply 10% discount if total bill exceeds ₹50,000.
+
+2. Apply 5% GST after discount.
+
+3. Give free delivery if bill exceeds ₹10,000.
+
+4. Generate an invoice number automatically.
+
+5. Allow multiple orders from the same customer.
+
+6. Display the best-selling product.
+
+7. Display products that are out of stock.
+
+------------------------------------------------------------
+
+Sample Output
+
+Store Products
+--------------
+Laptop
+Price : 65000
+Stock : 5
+
+Mouse
+Price : 1200
+Stock : 20
+
+Keyboard
+Price : 2500
+Stock : 15
+
+Order Confirmed.
+
+Order Details
+-------------
+Order ID      : O101
+Customer      : Rahul
+
+Products
+Laptop    x1
+Mouse     x2
+
+Subtotal      : 67400
+Discount      : 6740
+GST           : 3033
+Final Amount  : 63693
+
+Status        : Confirmed
+
+Store Revenue
+-------------
+63693

@@ -1,0 +1,122 @@
+Create a Python program using Object-Oriented Programming (OOP) to manage hotel rooms, guests, and bookings.
+
+------------------------------------------------------------
+
+Class 1: Room
+
+Attributes:
+- room_number
+- room_type
+- price_per_night
+- available_rooms
+
+Methods:
+- book_room(count):
+    - Reduces the available rooms if enough rooms are available.
+    - Returns True if booking is successful.
+    - Otherwise, returns False.
+
+- add_room(count):
+    - Increases the available rooms.
+
+- display():
+    - Displays all room details.
+
+------------------------------------------------------------
+
+Class 2: Booking
+
+Attributes:
+- booking_id
+- guest_name
+- room (Room object)
+- rooms_booked
+- nights
+- is_confirmed (Default value should be False)
+
+Methods:
+- calculate_bill():
+    - Returns the total bill.
+    - Formula:
+      rooms_booked × nights × price_per_night
+
+- confirm_booking():
+    - Calls the room's book_room() method.
+    - If booking is successful:
+        - Set is_confirmed to True.
+        - Return True.
+    - Otherwise, return False.
+
+- cancel_booking():
+    - If the booking is confirmed:
+        - Return the booked rooms to the hotel.
+        - Set is_confirmed to False.
+
+- display():
+    - Displays all booking details.
+
+------------------------------------------------------------
+
+Class 3: Hotel
+
+Attributes:
+- hotel_name
+- rooms (List of Room objects)
+
+Methods:
+- add_room(room):
+    - Adds a Room object to the hotel.
+
+- find_room(room_number):
+    - Returns the Room object if found.
+    - Otherwise, returns None.
+
+- display_rooms():
+    - Displays all room details.
+
+- book_room(booking):
+    - If booking confirmation is successful, print:
+      "Booking confirmed."
+    - Otherwise, print:
+      "Rooms not available."
+
+- cancel_booking(booking):
+    - Cancels the booking and prints:
+      "Booking cancelled."
+
+------------------------------------------------------------
+
+Expected Functionality
+
+1. Create multiple Room objects.
+2. Add rooms to the Hotel.
+3. Search for a room using room_number.
+4. Book rooms for guests.
+5. Prevent booking when rooms are unavailable.
+6. Calculate the total booking bill.
+7. Cancel a booking.
+8. Display room details.
+9. Display booking details.
+
+------------------------------------------------------------
+
+Sample Output
+
+Room Details
+------------
+Room Number     : 101
+Room Type       : Deluxe
+Price/Night     : 3500
+Available Rooms : 5
+
+Booking confirmed.
+
+Booking Details
+---------------
+Booking ID      : B101
+Guest Name      : Rahul
+Room Type       : Deluxe
+Rooms Booked    : 2
+Nights          : 3
+Total Bill      : 21000
+Status          : Confirmed

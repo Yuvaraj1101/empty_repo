@@ -1,0 +1,101 @@
+Problem Statement: Hospital Appointment Management System
+
+Create a Python program using Object-Oriented Programming (OOP) to manage doctors, patients, and appointments.
+
+------------------------------------------------------------
+
+Class 1: Doctor
+
+Attributes:
+- doctor_id
+- name
+- specialization
+- available_slots
+
+Methods:
+- book_slot(count): Reduces the available slots if enough slots are available and returns True. Otherwise, returns False.
+- add_slots(count): Increases the available slots.
+- display(): Displays all doctor details.
+
+------------------------------------------------------------
+
+Class 2: Appointment
+
+Attributes:
+- appointment_id
+- patient_name
+- doctor (Doctor object)
+- slots_required
+- is_confirmed (Default value should be False)
+
+Methods:
+- confirm_appointment():
+    - Calls the doctor's book_slot() method.
+    - If booking is successful:
+        - Set is_confirmed to True.
+        - Return True.
+    - Otherwise, return False.
+
+- cancel_appointment():
+    - If the appointment is confirmed:
+        - Return the booked slots to the doctor.
+        - Set is_confirmed to False.
+
+- display():
+    - Displays all appointment details.
+
+------------------------------------------------------------
+
+Class 3: Hospital
+
+Attributes:
+- hospital_name
+- doctors (List of Doctor objects)
+
+Methods:
+- add_doctor(doctor): Adds a doctor to the hospital.
+- find_doctor(doctor_id): Returns the Doctor object if found; otherwise returns None.
+- display_doctors(): Displays all doctor details.
+- book_appointment(appointment):
+    - If appointment confirmation is successful, print:
+      "Appointment confirmed."
+    - Otherwise, print:
+      "No slots available."
+
+- cancel_appointment(appointment):
+    - Cancels the appointment and prints:
+      "Appointment cancelled."
+
+------------------------------------------------------------
+
+Expected Functionality:
+
+1. Create multiple Doctor objects.
+2. Add doctors to the Hospital.
+3. Search for a doctor using doctor_id.
+4. Book appointment slots for patients.
+5. Prevent booking when slots are unavailable.
+6. Cancel an appointment.
+7. Display doctor details.
+8. Display appointment details.
+
+------------------------------------------------------------
+
+Sample Output
+
+Doctor Details
+--------------
+Doctor ID      : 101
+Name           : Dr. Ravi
+Specialization : Cardiologist
+Available Slots: 8
+
+Appointment confirmed.
+
+Appointment Details
+-------------------
+Appointment ID : A101
+Patient Name   : Rahul
+Doctor         : Dr. Ravi
+Slots Booked   : 2
+Status         : Confirmed
