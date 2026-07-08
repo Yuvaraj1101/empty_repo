@@ -1,0 +1,118 @@
+Problem Statement: Online Food Delivery System
+
+Design an Online Food Delivery System using Object-Oriented Programming (OOP) concepts in Python.
+
+-----------------------------------------------------
+
+1. FoodItem Class
+
+Attributes:
+- item_id
+- name
+- price
+- available_quantity
+
+Methods:
+
+display_item()
+- Display all details of the food item, including its ID, name, price, and available quantity.
+
+update_stock(quantity)
+- Reduce the available quantity when an order is placed.
+- If the requested quantity is greater than the available stock, do not update the stock and display an appropriate message.
+
+-----------------------------------------------------
+
+2. Customer Class
+
+Attributes:
+- customer_id
+- customer_name
+- cart (stores food items and their quantities)
+
+Methods:
+
+add_to_cart(food_item, quantity)
+- Check whether the requested quantity is available.
+- If available, add the item to the cart.
+- If the item already exists in the cart, increase its quantity.
+- If sufficient stock is not available, display an appropriate message.
+
+remove_from_cart(food_item)
+- Remove the selected food item from the cart.
+- If the item is not present in the cart, display an appropriate message.
+
+view_cart()
+- Display all food items currently in the cart along with their quantities and individual prices.
+- If the cart is empty, display a suitable message.
+
+-----------------------------------------------------
+
+3. Order Class
+
+Attributes:
+- order_id
+- customer
+- ordered_items
+- total_amount
+- order_status
+
+Methods:
+
+calculate_total()
+- Calculate the total bill by multiplying each item's price with its ordered quantity.
+- Store the calculated amount in the total_amount attribute.
+
+place_order()
+- Verify that the customer's cart is not empty.
+- Calculate the total bill.
+- Update the stock of every ordered food item.
+- Copy the cart items into the order.
+- Set the order status to "Placed".
+- Clear the customer's cart after a successful order.
+
+update_status(status)
+- Update the order status only if the provided status is valid.
+- Allowed statuses:
+    - Placed
+    - Preparing
+    - Out for Delivery
+    - Delivered
+
+display_order()
+- Display complete order details including:
+    - Order ID
+    - Customer Name
+    - Ordered Food Items
+    - Quantity of each item
+    - Individual Price
+    - Total Amount
+    - Current Order Status
+
+-----------------------------------------------------
+
+Functional Requirements
+
+- A customer can add multiple food items to the cart.
+- A food item cannot be added if sufficient stock is unavailable.
+- The same food item can be added multiple times, but its quantity should be updated instead of creating duplicate entries.
+- The cart must contain at least one item before placing an order.
+- Stock should be reduced only after the order is successfully placed.
+- After placing an order, the customer's cart should become empty.
+- The total bill should be calculated automatically.
+- The initial order status should be "Placed".
+- The order status can later be updated to:
+    - Preparing
+    - Out for Delivery
+    - Delivered
+
+-----------------------------------------------------
+
+Bonus Features (Optional)
+
+- Apply a 10% discount if the total bill exceeds ₹1000.
+- Generate the Order ID automatically.
+- Allow order cancellation only when the status is "Placed".
+- Restore the food item's stock if an order is cancelled.
+- Maintain an order history for each customer.
+- Display the total number of orders placed by a customer.
