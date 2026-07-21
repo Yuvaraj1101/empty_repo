@@ -1,0 +1,187 @@
+Problem Statement
+
+Design a Gym Membership Management System using Object-Oriented Programming (OOP) principles.
+
+The system should allow customers to enroll in gym membership plans, cancel memberships, and calculate the total membership cost. The gym should maintain information about different membership plans and their available slots. The system should ensure that memberships cannot exceed the available slots and that cancelled memberships restore slot availability.
+
+Implement the following classes.
+
+Class 1: MembershipPlan
+
+Each membership plan should have the following attributes:
+
+plan_id (integer)
+
+plan_name (string) (Example: Basic, Premium, VIP)
+
+monthly_fee (float)
+
+available_slots (integer)
+
+Implement the following methods:
+
+enroll_members(count)
+
+Enrolls the requested number of members if slots are available.
+
+Reduces the number of available slots.
+
+Returns True if the enrollment is successful; otherwise returns False.
+
+cancel_members(count)
+
+Adds the specified number of slots back after a cancellation.
+
+display()
+
+Displays the membership plan details in a readable format, including:
+
+Plan ID
+
+Plan Name
+
+Monthly Fee
+
+Available Slots
+
+Class 2: Membership
+
+Each membership should have the following attributes:
+
+membership_id (integer)
+
+customer_name (string)
+
+membership_plan (a MembershipPlan object)
+
+number_of_members (integer)
+
+duration_in_months (integer)
+
+Implement the following methods:
+
+confirm_membership()
+
+Attempts to enroll the requested number of members.
+
+Calls the appropriate method of the associated MembershipPlan object.
+
+Returns True if the enrollment is successful; otherwise returns False.
+
+cancel_membership()
+
+Cancels the membership.
+
+Restores the enrolled slots back to the gym's available inventory.
+
+calculate_total_fee()
+
+Calculates and returns the total membership amount using the formula:
+
+Total Fee = Monthly Fee × Number of Members × Duration in Months
+
+display()
+
+Displays the membership details, including:
+
+Membership ID
+
+Customer Name
+
+Plan Name
+
+Number of Members
+
+Duration in Months
+
+Total Fee
+
+Class 3: Gym
+
+The gym should maintain a collection of membership plans available for customers.
+
+Attributes
+
+gym_name (string)
+
+membership_plans (list of MembershipPlan objects)
+
+Implement the following methods:
+
+add_plan(plan)
+
+Adds a new membership plan to the gym.
+
+find_plan(plan_id)
+
+Searches for and returns the corresponding MembershipPlan object using the plan ID.
+
+If no plan is found, return None.
+
+display_plans()
+
+Displays the details of all membership plans currently available in the gym.
+
+enroll_member(membership)
+
+Attempts to confirm a membership by calling the membership's confirm_membership() method.
+
+Display an appropriate success or failure message.
+
+cancel_membership(membership)
+
+Cancels an existing membership and restores slot availability.
+
+Display a confirmation message after cancellation.
+
+Main Program
+
+Write a program that performs the following operations:
+
+Create a Gym object.
+
+Add at least three different membership plans to the gym, for example:
+
+Basic Plan
+
+Premium Plan
+
+VIP Plan
+
+Display the list of all available membership plans before any enrollments are made.
+
+Create at least two memberships for different customers.
+
+Confirm both memberships and display their details, including the total fee.
+
+Attempt to enroll more members than are currently allowed for one of the membership plans. The system should reject this enrollment and display an appropriate message.
+
+Cancel one of the successful memberships.
+
+Display the updated list of membership plans, showing the remaining available slots after all enrollment and cancellation operations.
+
+Expected Concepts Tested
+
+Your solution should demonstrate the following Object-Oriented Programming concepts:
+
+Class and object creation
+
+Constructors (__init__)
+
+Instance attributes
+
+Instance methods
+
+Object composition (a Membership contains a MembershipPlan object)
+
+Lists of objects
+
+Method invocation between objects
+
+Encapsulation of data and behavior
+
+Conditional logic
+
+State management through object interactions
+
+Basic program design using multiple collaborating classes
